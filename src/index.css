@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #E4EAC0;
+  --color-secondary: #98B475;
+  --color-navy: #1B365C;
+  --color-accent: #E67E22;
+}
+
+body {
+  @apply bg-white text-gray-900;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.timeline-dot::before {
+  content: '';
+  @apply absolute w-4 h-4 bg-accent rounded-full -left-2 top-1/2 transform -translate-y-1/2;
+}
+
+.skill-bar {
+  @apply h-2 rounded-full bg-secondary relative overflow-hidden;
+}
+
+.skill-progress {
+  @apply h-full absolute left-0 top-0 bg-accent transition-all duration-1000;
+}
+
+.navbar {
+  @apply fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm;
+}
+
+.navbar-link {
+  @apply text-navy hover:text-accent transition-colors px-4 py-2;
+}
+
+.navbar-link.active {
+  @apply text-accent font-medium;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
